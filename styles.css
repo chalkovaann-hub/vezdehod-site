@@ -226,6 +226,7 @@ h1 {
   gap: 14px;
   min-height: 88px;
   padding: 18px;
+  color: var(--ink);
 }
 
 .primary-action.accent {
