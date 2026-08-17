@@ -5,6 +5,8 @@
   --muted: #666666;
   --line: #dedede;
   --paper: #ffffff;
+  --dark: #1f2023;
+  --dark-soft: #2d2f33;
   --accent: #0094a3;
   --accent-strong: #00abbc;
   --accent-soft: #e8f7f9;
@@ -26,10 +28,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background:
-    linear-gradient(90deg, rgba(0, 148, 163, 0.08) 1px, transparent 1px),
-    linear-gradient(180deg, #ffffff 0%, #f4f6f7 58%, #eef2f3 100%);
-  background-size: 64px 64px, auto;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6f7 58%, #eef2f3 100%);
 }
 
 a {
@@ -39,7 +38,7 @@ a {
 
 .site-header {
   width: min(1120px, calc(100% - 32px));
-  margin: 14px auto 0;
+  margin: 16px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,7 +129,7 @@ a {
 
 main {
   width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
+  margin: 22px auto 0;
 }
 
 .hero {
@@ -139,10 +138,14 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
   gap: 34px;
   align-items: center;
-  min-height: clamp(420px, 56svh, 620px);
-  padding: 56px 0 34px;
-  overflow: hidden;
-  isolation: isolate;
+  min-height: auto;
+  padding: 42px;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(0, 148, 163, 0.22) 0%, rgba(0, 148, 163, 0) 40%),
+    linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%);
+  color: #ffffff;
+  box-shadow: 0 28px 70px rgba(31, 32, 35, 0.18);
 }
 
 .hero-copy {
@@ -151,22 +154,9 @@ main {
   max-width: 760px;
 }
 
-.hero-watermark {
-  position: absolute;
-  top: 18px;
-  right: -88px;
-  z-index: -1;
-  width: min(48vw, 560px);
-  opacity: 0.055;
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  transform: rotate(-4deg);
-}
-
 .eyebrow {
   margin: 0 0 18px;
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
@@ -184,9 +174,10 @@ h1 {
 .lead {
   max-width: 560px;
   margin: 18px 0 0;
-  color: var(--muted);
-  font-size: clamp(18px, 2.4vw, 22px);
-  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 750;
+  line-height: 1.35;
 }
 
 .quick-actions {
@@ -240,6 +231,7 @@ h1 {
 .primary-action.accent {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: var(--accent-ink);
+  border-color: rgba(0, 171, 188, 0.5);
 }
 
 .primary-action:hover,
@@ -301,7 +293,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  padding: 0 0 54px;
+  padding: 18px 0 54px;
 }
 
 .contact-card {
@@ -372,14 +364,7 @@ h1 {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 46px 0 30px;
-  }
-
-  .hero-watermark {
-    top: 12px;
-    right: -96px;
-    width: min(92vw, 500px);
-    opacity: 0.045;
+    padding: 34px;
   }
 
   .quick-actions {
@@ -419,7 +404,7 @@ h1 {
   }
 
   .hero {
-    padding: 34px 0 24px;
+    padding: 26px 18px;
   }
 
   h1 {
